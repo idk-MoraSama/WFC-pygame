@@ -1,0 +1,400 @@
+Air:
+  Air:
+    id:
+    - 47
+    sockets:
+      bottom: null
+      left: null
+      right: null
+      top: null
+Fence:
+  FenceLeft:
+    id:
+    - 41
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      right:
+      - Fence
+      - Grass
+      top: null
+  FenceMiddle:
+    id:
+    - 42
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Fence
+      - Grass
+      right:
+      - Fence
+      - Grass
+      top: null
+  FenceRight:
+    id:
+    - 43
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Fence
+      - Grass
+      right:
+      - Air
+      - Torch
+      - Tree
+      top: null
+  FenceSingle:
+    id:
+    - 40
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      right:
+      - Air
+      - Torch
+      - Tree
+      top: null
+Grass:
+  GrassBottomLeft:
+    id:
+    - 25
+    - 28
+    - 29
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Grass
+      top:
+      - Grass
+  GrassBottomRight:
+    id:
+    - 27
+    - 30
+    - 31
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Grass
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Grass
+  GrassColumnLeft:
+    id:
+    - 33
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Grass
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassColumnMiddle:
+    id:
+    - 34
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Grass
+      right:
+      - Grass
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassColumnRight:
+    id:
+    - 35
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Grass
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassMiddle:
+    id:
+    - 18
+    - 1
+    - 2
+    - 3
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Grass
+      right:
+      - Grass
+      top:
+      - Grass
+  GrassMiddleBottom:
+    id:
+    - 26
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Grass
+      right:
+      - Grass
+      top:
+      - Grass
+  GrassMiddleLeft:
+    id:
+    - 17
+    - 20
+    - 21
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Grass
+      top:
+      - Grass
+  GrassMiddleRight:
+    id:
+    - 19
+    - 22
+    - 23
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Grass
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Grass
+  GrassMiddleTop:
+    id:
+    - 10
+    - 4
+    - 5
+    - 6
+    - 7
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Grass
+      right:
+      - Grass
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassRowBottom:
+    id:
+    - 24
+    sockets:
+      bottom:
+      - Air
+      - Torch
+      - Tree
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Grass
+  GrassRowMid:
+    id:
+    - 16
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Grass
+  GrassRowTop:
+    id:
+    - 8
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassSingle:
+    id:
+    - 0
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Grass
+      right:
+      - Grass
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassTopLeft:
+    id:
+    - 9
+    - 12
+    - 13
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      right:
+      - Grass
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+  GrassTopRight:
+    id:
+    - 11
+    - 14
+    - 15
+    sockets:
+      bottom:
+      - Grass
+      left:
+      - Grass
+      right:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+      top:
+      - Air
+      - Torch
+      - Tree
+      - Fence
+Torch:
+  Torch:
+    id:
+    - 32
+    sockets:
+      bottom:
+      - Grass
+      - Fence
+      - Tree
+      left: null
+      right: null
+      top: null
+Tree:
+  Leaf:
+    id:
+    - 39
+    sockets:
+      bottom:
+      - Tree
+      left: null
+      right: null
+      top: null
+  TreeRoot:
+    id:
+    - 46
+    sockets:
+      bottom:
+      - Grass
+      left: null
+      right: null
+      top:
+      - Tree
+  TreeTrunk:
+    id:
+    - 38
+    sockets:
+      bottom:
+      - Tree
+      left: null
+      right: null
+      top:
+      - Tree
