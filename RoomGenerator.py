@@ -1,5 +1,6 @@
 import pygame
 from sys import exit
+from copy import deepcopy
 import random
 import yaml
 
@@ -14,53 +15,50 @@ render_surf = pygame.Surface([400,400])
 
 class Room():
     def __init__(self,image_path,sockets_path,tilesize,room_size):
+        self.corners = {}
         self.grid = {}
         self.image = pygame.image.load(image_path).convert_alpha()
         self.image_set = []
         self.sockets = {}
+        self.classes = []
         self.tiles = {}
 
         self.size = room_size
         self.tilesize = tilesize
 
-        with open(sockets_path, "r") as file:
-            self.sockets = yaml.safe_load(file)
-    
-    def generate_tile_image(self):
-        self.image_set= []
+        with open("sockets.yaml","r") as file:
+            s = yaml.safe_load(file)
+            self.classes = s["Classes"]
+            self.sockets = {k : v for k,v in s.items() if type(k) is not str}
+
         for y in range(0,self.image.height,self.tilesize):
             for x in random(0,self.image.width,self.tilesize):
                 self.imageset.append(self.image.subsurface((x,y),(x+self.tilesize,y+self.tilesize)))
 
     def generate_grid(self):
-        for y in self.size[1]:
-            for x in self.size[0]:
+        for y in range(self.size[1]+1):
+            for x in range(self.size[0]+1):
+                self.corners[(x,y)] = self.classes.copy()
+        
+        for y in range(self.size[1]):
+            for x in range(self.size[0]):
                 self.grid[(x,y)] = {
+                    "corners" : [self.corners[(x,y)],self.corners[(x+1,y)],self.corners[(x,y+1)],self.corners[(x+1,y+1)]],
                     "collapsed" : False,
-                    "candidates" : self.sockets.keys(),
-                    "image" : None
+                    "image" : None 
                 }
     
-    def get_min_entropy(self):
-        min_entropy = min([len(x["candidates"]) for x in self.grid.values()])
-
-        low_entropy_cells = []
-
-        for cell in self.grid:
-            if len(cell["candidates"]) == min_entropy and not cell["collapsed"]:
-                low_entropy_cells.append(cell)
-        
-        if low_entropy_cells == []:
-            return
-        
-        return random.choice(low_entropy_cells)
-    
     def collapse_cell(self,cell):
-        if cell in self.grid:
-            self.grid[cell]["collapsed"] = True
-            self.grid[cell]["candidates"] = random.choice(self.sockets.keys())
-            self.grid[cell]["Socket"] = 
-            }
+        cell = self.grid[cell]
+
+        if cell["collapsed"]:
+            return
+
+        for corner in cell["corners"]:
+            while len(corner) > 1:
+                corner.pop(random.randint(0,len(corner)-1))
+                 
+
 
 if __name__ == "__main__":
 
