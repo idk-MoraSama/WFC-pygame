@@ -1,16 +1,25 @@
-import random
+import pygame
+import sys
 
-size = 3,3
-grid = {}
-classes = [None,"G"]
+pygame.init()
 
-for y in range(size[1]):
-    for x in range(size[0]):
-        grid[(x,y)] = classes.copy()
+screen = pygame.display.set_mode((400,400))
 
-for y in range(3):
-    for x in range(3):
-        while len(grid[(x,y)]) > 1:
-            grid[(x,y)].pop(random.randint(0,len(grid[(x,y)])-1))
+img = pygame.image.load("grass-tiles.png").convert_alpha()
+a = 300
 
-print(grid)
+clock = pygame.time.Clock()
+
+while True:
+    delta = clock.tick(60)
+    a -= 1
+
+    if a <= 0:
+        pygame.quit()
+        sys.exit()
+
+    for y in range(0,img.height - 31,32):
+        for x in range(0,img.width- 31,32):
+            screen.blit(img.subsurface((x,y),(32,32)),(x*1.2,y*1.2))
+    
+    pygame.display.update()
